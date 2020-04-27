@@ -2,6 +2,10 @@ html, body, main, #wrapper {
   height: 100vh;
 }
 
+body {
+  margin-top: -1rem;
+}
+
 .colorContainer {
   height: 33.3333333333vh;
   border-bottom: 1px solid black;
