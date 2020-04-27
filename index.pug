@@ -1,0 +1,90 @@
+doctype html
+html
+  head
+    title Color Picker
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='generator', content='http://chalarangelo.github.io/htmltemplategenerator/')
+    script(type='text/javascript', src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    link(rel='stylesheet', href='public/style.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+
+  body
+    main
+      #wrapper
+        ul#slide-out.sidenav.sidenav-fixed
+          li
+            .user-view
+              .background
+                img(src='public/cedula.png')
+          li
+            a.subheader Color 1
+            .divider
+            .picker
+              | Red 
+              input#red(type='range', min='0', max='255', step='1', value='115')
+              |     Green 
+              input#green(type='range', min='0', max='255', step='1', value='10')
+              |     Blue 
+              input#blue(type='range', min='0', max='255', step='1', value='162')
+          li
+            a.subheader Color 2
+            .divider
+            .picker
+              | Red 
+              input#red2(type='range', min='0', max='255', step='1', value='115')
+              |     Green 
+              input#green2(type='range', min='0', max='255', step='1', value='10')
+              |     Blue 
+              input#blue2(type='range', min='0', max='255', step='1', value='162')        
+          li
+            a.subheader Color 3
+            .divider
+            .picker
+              | Red 
+              input#red3(type='range', min='0', max='255', step='1', value='115')
+              |     Green 
+              input#green3(type='range', min='0', max='255', step='1', value='10')
+              |     Blue 
+              input#blue3(type='range', min='0', max='255', step='1', value='162')
+
+        a.sidenav-trigger(href='#', data-target='slide-out')
+          i.material-icons menu
+
+        #display.colorContainer
+        #display2.colorContainer
+        #display3.colorContainer
+  script(type='text/javascript').
+    var input = document.querySelectorAll("input");
+    for(var i = 0; i < input.length; i++){
+    input[i].addEventListener("input", function(){
+    var red = document.getElementById("red").value,
+    green = document.getElementById("green").value,
+    blue = document.getElementById("blue").value;
+    var display = document.getElementById("display");
+    display.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+    });
+    }
+    var input = document.querySelectorAll("input");
+    for(var i = 0; i < input.length; i++){
+    input[i].addEventListener("input", function(){
+    var red = document.getElementById("red2").value,
+    green = document.getElementById("green2").value,
+    blue = document.getElementById("blue2").value;
+    var display = document.getElementById("display2");
+    display.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+    });
+    }
+    var input = document.querySelectorAll("input");
+    for(var i = 0; i < input.length; i++){
+    input[i].addEventListener("input", function(){
+    var red = document.getElementById("red3").value,
+    green = document.getElementById("green3").value,
+    blue = document.getElementById("blue3").value;
+    var display = document.getElementById("display3");
+    display.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+    });
+    }
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')
+  script(type='text/javascript', src='public/scripts.js')
